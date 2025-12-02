@@ -15,10 +15,11 @@ if [[ ! -f "$SOURCE_FILE" ]]; then
     echo "Make sure you're running this from inside the cloned repo."
     exit 1
 fi
-
+sudo mkdir -p /usr/local/bin
 sudo rm -f /usr/local/bin/phn
 
 sudo ln -s "$SOURCE_FILE" /usr/local/bin/phn
+sudo chmod 755 /usr/local/bin/phn
 
 echo -e "${GREEN}Success! You can now run 'phn' from anywhere.${NC}"
 echo ""
