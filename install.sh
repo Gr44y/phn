@@ -66,7 +66,7 @@ sudo ln -sf "$SOURCE_FILE" /usr/local/bin/phn
 sudo chmod 755 /usr/local/bin/phn
 
 echo -e "${GREEN}╔══════════════════════════════╗${NC}"
-echo -e "${GREEN}║     phn installed perfectly!     ║${NC}"
+echo -e "${GREEN}║     phn installed perfectly! ║${NC}"
 echo -e "${GREEN}╚══════════════════════════════╝${NC}"
 echo
 echo "   Just type:  phn"
