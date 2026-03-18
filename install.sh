@@ -13,20 +13,20 @@ echo -e "${YELLOW}Supports Alpine • Ubuntu • Arch • Gentoo • Fedora • 
 if ! command -v php >/dev/null 2>&1; then
     echo -e "${YELLOW}Installing PHP + required extensions...${NC}"
 
-    if command -v apk >/dev/null 2>&1; then                  # Alpine Linux
+    if command -v apk >/dev/null 2>&1; then                  # Alpine
         sudo apk add --no-cache php83 php83-cli php83-json php83-mbstring php83-openssl php83-xml php83-simplexml
         
         sudo mkdir -p /etc/php83/conf.d
         echo "extension=simplexml.so" | sudo tee /etc/php83/conf.d/00_simplexml.ini > /dev/null
 
-    elif command -v apt-get >/dev/null 2>&1; then            # Debian / Ubuntu / Pop!_OS
+    elif command -v apt-get >/dev/null 2>&1; then            # Debian
         sudo apt-get update -qq
         sudo apt-get install -y php-cli php-xml php-mbstring php-curl php-openssl
 
-    elif command -v dnf >/dev/null 2>&1; then                # Fedora / RHEL / Rocky / Alma
+    elif command -v dnf >/dev/null 2>&1; then                # Fedora
         sudo dnf install -y php-cli php-xml php-mbstring php-json php-openssl
 
-    elif command -v pacman >/dev/null 2>&1; then             # Arch / Manjaro / EndeavourOS / CachyOS
+    elif command -v pacman >/dev/null 2>&1; then             # Arch
         sudo pacman -Sy --noconfirm php
 
     elif command -v emerge >/dev/null 2>&1; then             # Gentoo
