@@ -41,6 +41,9 @@ if ! command -v php >/dev/null 2>&1; then
     elif command -v brew >/dev/null 2>&1; then               # macOS
         brew install php
 
+    elif command -v pkg >/dev/nul; 2>&1; then                # FreeBSD
+        pkg install php
+
     else
         echo -e "${RED}Unknown package manager — please install PHP + php-xml manually${NC}"
         exit 1
